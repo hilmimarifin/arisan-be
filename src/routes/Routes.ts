@@ -9,6 +9,8 @@ import RoleMenuAccessController from "../controllers/RoleMenuAccessController";
 import UserValidation from "../middleware/validation/UserValidation";
 import Authorization from "../middleware/Authorization";
 import MenuValidation from "../middleware/validation/MenuValidation";
+import ArisanController from "../controllers/ArisanController";
+import ParticipantController from "../controllers/ParticipantController";
 
 const router = express.Router();
 
@@ -54,4 +56,17 @@ router.get("/role-menu-access/get/all", Authorization.Authenticated, Authorizati
 router.get("/role-menu-access/:id", Authorization.Authenticated, Authorization.AdminRole, RoleMenuAccessController.GetDetail);
 router.patch("/role-menu-access/:id", MenuValidation.CreateRoleMenuAccess, Authorization.Authenticated, Authorization.AdminRole, RoleMenuAccessController.UpdateAccess);
 router.delete("/role-menu-access/:id", Authorization.Authenticated, Authorization.AdminRole, RoleMenuAccessController.SoftDelete);
+
+//arisan
+router.post("/api/arisan/create", ArisanController.Create);
+// 
+
+
+//participant router
+router.post("/api/participant/create", ParticipantController.Create);
+router.get("/api/participant/view", ParticipantController.View);    
+
+
+
+
 export default router;
