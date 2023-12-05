@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import Participant from "../db/models/Participant";
 import Helper from "../helpers/Helper";
 import Arisan from "../db/models/Arisan";
+import Event from "../db/models/Event";
 
 const Create = async (req: Request, res: Response): Promise<Response> => {
     try {
@@ -22,14 +23,29 @@ const Create = async (req: Request, res: Response): Promise<Response> => {
 
 const View = async (req: Request, res: Response): Promise<Response> => {
     try {
+        const { arisanId } = req.query;
+        const resp = await Participant.findAll({
+            where: { arisanId: Number(arisanId) },
+            raw: true,
+            include:
+                [
+                    {
+                        model: Event,
+                        attributes: ['location'],
+                    },
+                ]
+        });
+        const data = resp as any
+        const updatedData = data.map((item: any) => {
+            const { "Event.location": eventLocation, ...rest } = item;
+            return { ...rest, winLocation: eventLocation };
+          });
 
-        const data = await Participant.findAll({include: Arisan});
-
-        return res.status(201).send(Helper.ResponseData(201, "OK", null, data));
+        return res.status(201).send(Helper.ResponseData(201, "OK", null, updatedData));
     } catch (error: any) {
         return res.status(500).send(Helper.ResponseData(500, "", error, null));
     }
 };
 
 
-export default { Create, View};
+export default { Create, View };

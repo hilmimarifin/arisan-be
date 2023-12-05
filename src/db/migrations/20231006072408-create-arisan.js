@@ -12,6 +12,10 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      cost: {
+        type: Sequelize.INTEGER
+      },
+
       is_active: {
         type: Sequelize.BOOLEAN
       },

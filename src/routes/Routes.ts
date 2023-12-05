@@ -11,6 +11,9 @@ import Authorization from "../middleware/Authorization";
 import MenuValidation from "../middleware/validation/MenuValidation";
 import ArisanController from "../controllers/ArisanController";
 import ParticipantController from "../controllers/ParticipantController";
+import EventController from "../controllers/EventController";
+import PembayaranController from "../controllers/PembayaranController";
+import WordController from "../controllers/WordController";
 
 const router = express.Router();
 
@@ -59,13 +62,33 @@ router.delete("/role-menu-access/:id", Authorization.Authenticated, Authorizatio
 
 //arisan
 router.post("/api/arisan/create", ArisanController.Create);
-// 
+router.get("/api/arisan/detail", ArisanController.Detail);
+router.get("/api/arisan/view", ArisanController.View);
+router.put("/api/arisan/delete", ArisanController.Delete);
+
+// Word
+router.post("/api/word/create", WordController.Create);
+router.get("/api/word/view", WordController.View);
+router.delete("/api/word/delete", WordController.Delete);
+
 
 
 //participant router
 router.post("/api/participant/create", ParticipantController.Create);
 router.get("/api/participant/view", ParticipantController.View);    
 
+//event router
+router.post("/api/event/create", EventController.Create);
+router.get("/api/event/view", EventController.View);  
+router.get("/api/event/detail", EventController.Detail);
+router.put("/api/event/set-winner", EventController.SetWinner);
+router.put("/api/event/delete", EventController.Delete);
+
+//pembayaran router
+router.post("/api/pembayaran/create", PembayaranController.Create);
+router.put("/api/pembayaran/remove", PembayaranController.Remove);
+router.get("/api/pembayaran/view", PembayaranController.View);    
+router.get("/api/pembayaran/viewpaid", PembayaranController.ViewPaid);    
 
 
 

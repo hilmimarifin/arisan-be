@@ -15,8 +15,17 @@ module.exports = {
       location: {
         type: Sequelize.STRING
       },
+      arisanId: {
+        type: Sequelize.INTEGER
+      },
+      organizer: {
+        type: Sequelize.STRING
+      },
       is_active: {
         type: Sequelize.BOOLEAN
+      },
+      winnerParticipantId: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

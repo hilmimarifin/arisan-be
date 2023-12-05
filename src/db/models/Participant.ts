@@ -1,6 +1,6 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import connection from "../../config/dbConnect";
-import Arisan from "./Arisan";
+import Event from "./Event";
 
 interface ParticipantAttributes {
     id?: number,
@@ -35,15 +35,17 @@ Participant.init({
         allowNull: true
     },
     arisanId: {
-      type: DataTypes.BIGINT,
-      allowNull: true
-  },
-   
+        type: DataTypes.BIGINT,
+        allowNull: true
+    },
+
+
 }, {
     timestamps: true,
     sequelize: connection,
     underscored: false
 });
-
-
+Participant.hasOne(Event, { foreignKey: "winnerParticipantId" })
+Event.belongsTo(Participant, {foreignKey: "winnerParticipantId"})
+// Participant.hasMany(Pembayaran, {foreignKey: "participantId"})
 export default Participant;

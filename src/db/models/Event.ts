@@ -1,11 +1,15 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import connection from "../../config/dbConnect";
+import Participant from "./Participant";
 
 interface EventAttributes {
     id?: number,
     date?: string | null,
     location?: string | null,
+    arisanId?: number | null,
     is_active?: boolean | null,
+    winnerParticipantId?: number | null,
+    organizer?: string | null
 
     createdAt?: Date,
     updatedAt?: Date
@@ -18,8 +22,10 @@ class Event extends Model<EventAttributes, EventInput> implements EventAttribute
     public id!: number;
     public date!: string;
     public location!: string;
+    public arisanId!: number;
     public is_active!: boolean;
-
+    public winnerParticipantId!: number;
+    public organizer!: string;
 
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
@@ -41,6 +47,19 @@ Event.init({
         type: DataTypes.STRING,
         allowNull: true,
     },
+    organizer: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    arisanId: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+    winnerParticipantId: {
+        type: DataTypes.BIGINT,
+        allowNull: true,
+    },
+
     is_active: {
         type: DataTypes.BOOLEAN,
         allowNull: true
@@ -51,4 +70,5 @@ Event.init({
     underscored: false
 });
 
+// Event.belongsTo(Participant, {foreignKey: "winnerParticipantId"})
 export default Event;

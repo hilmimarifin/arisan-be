@@ -53,7 +53,7 @@ Pembayaran.init({
     underscored: false
 });
 
-Pembayaran.hasOne(Event);
-Pembayaran.hasMany(Participant);
-
+Event.hasMany(Pembayaran, {foreignKey: "eventId"})
+Pembayaran.belongsTo(Event, {foreignKey: "eventId"});
+Pembayaran.belongsTo(Participant, {foreignKey: "participantId"})
 export default Pembayaran;

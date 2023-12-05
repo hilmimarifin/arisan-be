@@ -3,50 +3,48 @@ import connection from "../../config/dbConnect";
 import Participant from "./Participant";
 import Event from "./Event";
 
-interface WinnerAttributes {
+interface WordAttributes {
     id?: number,
-    participantId?: number | null,
-    eventId?: number | null,
+    sentence?: string | null,
+    arisanId?: number | null,
+
     createdAt?: Date,
     updatedAt?: Date
 }
 
-export interface WinnerInput extends Optional<WinnerAttributes, 'id'> { }
-export interface WinnerOutput extends Required<WinnerAttributes> { }
+export interface WordInput extends Optional<WordAttributes, 'id'> { }
+export interface WordOutput extends Required<WordAttributes> { }
 
-class Winner extends Model<WinnerAttributes, WinnerInput> implements WinnerAttributes {
+class Word extends Model<WordAttributes, WordInput> implements WordAttributes {
     public id!: number;
-    public participantId!: number;
-    public eventId!: number;
+    public sentence!: string;
+    public arisanId!: number;
 
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
 }
 
 
-Winner.init({
+Word.init({
     id: {
         type: DataTypes.BIGINT,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    participantId: {
+    sentence: {
         type: DataTypes.STRING,
         allowNull: true
     },
-    eventId: {
-      type: DataTypes.NUMBER,
-      allowNull: true
-  },
-   
+    arisanId: {
+        type: DataTypes.BIGINT,
+        allowNull: true
+    },
+
 }, {
     timestamps: true,
     sequelize: connection,
     underscored: false
 });
 
-Winner.hasOne(Participant);
-Winner.hasOne(Event);
-
-export default Winner;
+export default Word;
