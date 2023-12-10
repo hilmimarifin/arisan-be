@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import Role from "../db/models/Role";
-import RoleMenuAccess from "../db/models/RoleMenuAccess";
-import Submenu from "../db/models/Submenu";
-import Helper from "../helpers/Helper";
+import Role from "../db/models/Role.js";
+import RoleMenuAccess from "../db/models/RoleMenuAccess.js";
+import Submenu from "../db/models/Submenu.js";
+import Helper from "../helpers/Helper.js";
 
 const CreateAccess =async (req:Request, res:Response):Promise<Response> => {
 	try {

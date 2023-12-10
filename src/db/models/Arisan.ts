@@ -1,8 +1,8 @@
 import { DataTypes, Model, Optional } from "sequelize";
-import connection from "../../config/dbConnect";
-import Participant from "./Participant";
-import Event from "./Event";
-import Word from "./Word";
+import connection from "../../config/dbConnect.js";
+import Participant from "./Participant.js";
+import Event from "./Event.js";
+import Word from "./Word.js";
 
 interface ArisanAttributes {
     id?: number,

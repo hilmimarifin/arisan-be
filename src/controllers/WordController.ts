@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
-import Word from "../db/models/Word";
-import Helper from "../helpers/Helper";
+import Word from "../db/models/Word.js";
+import Helper from "../helpers/Helper.js";
 
 const Create = async (req: Request, res: Response): Promise<Response> => {
     try {

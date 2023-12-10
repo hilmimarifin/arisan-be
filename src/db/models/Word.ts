@@ -1,7 +1,7 @@
 import { DataTypes, Model, Optional } from "sequelize";
-import connection from "../../config/dbConnect";
-import Participant from "./Participant";
-import Event from "./Event";
+import connection from "../../config/dbConnect.js";
+import Participant from "./Participant.js";
+import Event from "./Event.js";
 
 interface WordAttributes {
     id?: number,

@@ -1,10 +1,10 @@
 import Validator from "validatorjs";
 import { Request, Response, NextFunction } from "express";
-import Helpers from "../../helpers/Helper";
+import Helpers from "../../helpers/Helper.js";
 
-import MasterMenu from "../../db/models/MasterMenu";
-import Submenu from "../../db/models/Submenu";
-import Role from "../../db/models/Role";
+import MasterMenu from "../../db/models/MasterMenu.js";
+import Submenu from "../../db/models/Submenu.js";
+import Role from "../../db/models/Role.js";
 
 
 const CreateMenuValidation = (req: Request, res: Response, next: NextFunction) => {

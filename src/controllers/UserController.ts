@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
 import { Op } from "sequelize";
-import Role from "../db/models/Role";
-import User from "../db/models/User";
-import RoleMenuAccess from "../db/models/RoleMenuAccess";
-import MasterMenu from "../db/models/MasterMenu";
-import Submenu from "../db/models/Submenu";
+import Role from "../db/models/Role.js";
+import User from "../db/models/User.js";
+import RoleMenuAccess from "../db/models/RoleMenuAccess.js";
+import MasterMenu from "../db/models/MasterMenu.js";
+import Submenu from "../db/models/Submenu.js";
 
-import Helper from "../helpers/Helper";
-import PasswordHelper from "../helpers/PasswordHelper";
-import { verifyGoogleToken } from "../helpers/GoogleHelper";
+import Helper from "../helpers/Helper.js";
+import PasswordHelper from "../helpers/PasswordHelper.js";
+import { verifyGoogleToken } from "../helpers/GoogleHelper.js";
 
 const Register = async (req: Request, res: Response): Promise<Response> => {
     try {

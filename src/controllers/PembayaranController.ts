@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 
-import Participant from "../db/models/Participant";
-import Pembayaran from "../db/models/Pembayaran";
-import Helper from "../helpers/Helper";
+import Participant from "../db/models/Participant.js";
+import Pembayaran from "../db/models/Pembayaran.js";
+import Helper from "../helpers/Helper.js";
 
 const Create = async (req: Request, res: Response): Promise<Response> => {
     try {

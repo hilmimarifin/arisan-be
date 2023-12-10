@@ -1,7 +1,7 @@
 import Validator from "validatorjs";
 import { Request, Response, NextFunction } from "express";
-import Helpers from "../../helpers/Helper";
-import User from "../../db/models/User";
+import Helpers from "../../helpers/Helper.js";
+import User from "../../db/models/User.js";
 
 const RegisterValidation = async (req: Request, res: Response, next: NextFunction) => {
     try {

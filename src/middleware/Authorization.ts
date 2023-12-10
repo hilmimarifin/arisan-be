@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import Helper from "../helpers/Helper";
+import Helper from "../helpers/Helper.js";
 
 const Authenticated = (req: Request, res: Response, next: NextFunction) => {
 	try {

@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "moduleResolution": "Bundler",
+        "module": "ES2020"
+      },
+    "ts-node": {
+        "esm": true
+    },
+}

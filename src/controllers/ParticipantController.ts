@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 
-import Participant from "../db/models/Participant";
-import Helper from "../helpers/Helper";
-import Arisan from "../db/models/Arisan";
-import Event from "../db/models/Event";
+import Participant from "../db/models/Participant.js";
+import Helper from "../helpers/Helper.js";
+import Arisan from "../db/models/Arisan.js";
+import Event from "../db/models/Event.js";
 
 const Create = async (req: Request, res: Response): Promise<Response> => {
     try {

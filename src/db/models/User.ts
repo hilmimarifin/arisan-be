@@ -1,6 +1,6 @@
 import { DataTypes, Model, Optional } from "sequelize";
-import connection from "../../config/dbConnect";
-import Role from "./Role";
+import connection from "../../config/dbConnect.js";
+import Role from "./Role.js";
 
 interface UserAttributes {
     id?: number,

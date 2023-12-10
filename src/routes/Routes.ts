@@ -1,19 +1,19 @@
 import express from "express";
 
-import RoleController from "../controllers/RoleController";
-import UserController from "../controllers/UserController";
-import MasterMenuController from "../controllers/MasterMenuController";
-import SubmenuController from "../controllers/SubmenuController";
-import RoleMenuAccessController from "../controllers/RoleMenuAccessController";
+import RoleController from "../controllers/RoleController.js";
+import UserController from "../controllers/UserController.js";
+import MasterMenuController from "../controllers/MasterMenuController.js";
+import SubmenuController from "../controllers/SubmenuController.js";
+import RoleMenuAccessController from "../controllers/RoleMenuAccessController.js";
 
-import UserValidation from "../middleware/validation/UserValidation";
-import Authorization from "../middleware/Authorization";
-import MenuValidation from "../middleware/validation/MenuValidation";
-import ArisanController from "../controllers/ArisanController";
-import ParticipantController from "../controllers/ParticipantController";
-import EventController from "../controllers/EventController";
-import PembayaranController from "../controllers/PembayaranController";
-import WordController from "../controllers/WordController";
+import UserValidation from "../middleware/validation/UserValidation.js";
+import Authorization from "../middleware/Authorization.js";
+import MenuValidation from "../middleware/validation/MenuValidation.js";
+import ArisanController from "../controllers/ArisanController.js";
+import ParticipantController from "../controllers/ParticipantController.js";
+import EventController from "../controllers/EventController.js";
+import PembayaranController from "../controllers/PembayaranController.js";
+import WordController from "../controllers/WordController.js";
 
 const router = express.Router();
 

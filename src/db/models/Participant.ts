@@ -1,6 +1,6 @@
 import { DataTypes, Model, Optional } from "sequelize";
-import connection from "../../config/dbConnect";
-import Event from "./Event";
+import connection from "../../config/dbConnect.js";
+import Event from "./Event.js";
 
 interface ParticipantAttributes {
     id?: number,

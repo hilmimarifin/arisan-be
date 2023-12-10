@@ -2,9 +2,9 @@ import express, { Request, Response } from "express";
 import cookieParser from "cookie-parser";
 import cors from 'cors'
 import dotenv from "dotenv";
-import sequelizeConnection from "./config/dbConnect";
+import sequelizeConnection from "./config/dbConnect.js";
 
-import router from "./routes/Routes";
+import router from "./routes/Routes.js";
 
 dotenv.config();
 

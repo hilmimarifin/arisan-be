@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 
-import Arisan from "../db/models/Arisan";
-import Helper from "../helpers/Helper";
-import Participant from "../db/models/Participant";
-import Event from "../db/models/Event";
-import Word from "../db/models/Word";
+import Arisan from "../db/models/Arisan.js";
+import Helper from "../helpers/Helper.js";
+import Participant from "../db/models/Participant.js";
+import Event from "../db/models/Event.js";
+import Word from "../db/models/Word.js";
 
 const Create = async (req: Request, res: Response): Promise<Response> => {
     try {

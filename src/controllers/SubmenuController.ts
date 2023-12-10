@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Submenu from "../db/models/Submenu";
-import Helper from "../helpers/Helper";
+import Submenu from "../db/models/Submenu.js";
+import Helper from "../helpers/Helper.js";
 
 const CreateSubmenu = async (req: Request, res: Response): Promise<Response> => {
 	try {
